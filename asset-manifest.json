@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/WasmFiddleWidget/static/css/main.073c9b0a.css",
+    "main.js": "/WasmFiddleWidget/static/js/main.1a18de3b.js",
+    "static/media/logo.png": "/WasmFiddleWidget/static/media/logo.935f416a97014aa14279.png",
+    "index.html": "/WasmFiddleWidget/index.html",
+    "main.073c9b0a.css.map": "/WasmFiddleWidget/static/css/main.073c9b0a.css.map",
+    "main.1a18de3b.js.map": "/WasmFiddleWidget/static/js/main.1a18de3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.1a18de3b.js"
+  ]
+}
