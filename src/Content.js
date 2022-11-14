@@ -29,7 +29,7 @@ export default function Content() {
     };
 
     return (
-        <div className="contentDiv" style={ { height: 800, width: 500, justifyContent: 'center', alignContent: 'center'} }>
+        <div className="contentDiv" style={ { height: 600, width: 400, justifyContent: 'center', alignContent: 'center'} }>
             <AppBar position="static" variant="dense" display="flex">
                 <Toolbar>
                     <img src={Logo} alt="logo" width="30" height="30" border="2"/>
