@@ -10,23 +10,40 @@ import CodeMirror from '@uiw/react-codemirror';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import axios from 'axios';
 
 
 export default function Content() {
     const [submit, setSubmit] = React.useState(false);
     const [output, setOutput] = React.useState("");
     const [language, setLanguage] = React.useState("");
-    const onChange = React.useCallback((value, viewUpdate) => {
-        console.log('value: ', value);
-    }, []);
+    const [code, setCode] = React.useState("");
+    
+    const onChange = (event) => {
+        setCode(event.target.value);
+    };
 
     const onSubmit = () => {
         setSubmit(!submit);
+        sendPost();
     };
 
     const handleLanguage = (event) => {
         setLanguage(event.target.value);
     };
+
+    const sendPost = (e) => {
+        axios.post('http://3.136.237.101:8000/compile', {
+            code: code,
+            language: language
+        })
+        .then(function (response){
+            setOutput(response);
+        })
+        .catch(function (error){
+            console.log(error);
+        })
+    }
 
     return (
         <div className="contentDiv" style={ { height: 600, width: 400, justifyContent: 'center', alignContent: 'center'} }>
