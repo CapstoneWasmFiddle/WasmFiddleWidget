@@ -19,6 +19,7 @@ export default function Content() {
     const [language, setLanguage] = React.useState("");
     const [code, setCode] = React.useState("");
     
+    
     const onChange = (event) => {
         setCode(event.target.value);
     };
@@ -38,7 +39,9 @@ export default function Content() {
             language: language
         })
         .then(function (response){
-            setOutput(response);
+            let index = response.lastIndexOf("(i32.const ");
+            let val = response.indexOf(")", index);
+            setOutput(response.slice(index, val));
         })
         .catch(function (error){
             console.log(error);
